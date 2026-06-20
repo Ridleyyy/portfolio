@@ -8,3 +8,12 @@ Laser scope drawing green page
 City scape layout for content
 Visualise working website like an engine in davinci paper style
 Zena blue based page
+
+# Domains
+williamwilliam.com.au
+williamwilliam.info
+williamwilliam.org
+williamwilliam.website
+williamridleysmith.com
+williamridleysmith.me
+william-ridleysmith.com
