@@ -1,0 +1,34 @@
+---
+title: "Hello, World"
+date: "2026-06-01"
+summary: "The first post — a quick tour of how this MDX blog renders headings, prose, lists, and code."
+---
+
+This is the first post on the blog. It exists mainly to exercise the
+typography styles, so it contains a bit of everything.
+
+## A second-level heading
+
+Cormorant handles body copy, while code falls back to the mono font. Here is
+some **bold text**, some _italic text_, and an [inline link](/blog).
+
+### A third-level heading
+
+A short list of things this post checks:
+
+- Paragraph spacing and color on the gray background
+- Heading hierarchy in the serif font
+- Inline `code` styling
+- Fenced code blocks
+
+A fenced code block:
+
+```ts
+export function greet(name: string): string {
+  return `Hello, ${name}`;
+}
+```
+
+> A blockquote, to confirm the border and muted text overrides read well.
+
+That's everything — if each of these looks right, the styling pipeline works.
