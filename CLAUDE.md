@@ -32,17 +32,19 @@ There are no tests configured yet.
 
 **Fonts** — Geist Sans and Geist Mono loaded via `next/font/google` in `layout.tsx`, exposed as CSS variables (`--font-geist-sans`, `--font-mono`), and applied as Tailwind theme tokens.
 
-**CSS variables** — `--background` and `--foreground` defined in `:root` with dark mode overrides via `@media (prefers-color-scheme: dark)`.
+**CSS variables** — `--background` (`#ababab`) and `--foreground` (`#171717`) defined in `:root`. No dark mode — the moodboard phase locked the palette to a single light-grey theme.
 
 **Path alias** — `@/*` maps to the repo root (e.g. `import Foo from "@/components/Foo"`).
 
 **TypeScript** — Strict mode enabled. `moduleResolution: "bundler"` is Next.js's modern resolver.
 
+**Blog (MDX)** — Posts are `.mdx` files in `content/blog/` (outside the route tree, so they aren't treated as pages). `lib/posts.ts` reads that folder and parses YAML frontmatter (`title`, `date`, `summary`) with `gray-matter`. `app/blog/page.tsx` is the index; `app/blog/[slug]/page.tsx` is the dynamic route that renders one post via `next-mdx-remote/rsc` and statically generates every post through `generateStaticParams` (`dynamicParams = false`, so unknown slugs 404). Post content is styled with the `@tailwindcss/typography` `prose` classes (enabled via `@plugin "@tailwindcss/typography";` in `globals.css`), with `prose-*` overrides tuned for the grey theme. **To add a post:** drop a new `.mdx` file with frontmatter into `content/blog/` — no code changes needed.
+
 ## Build Phases (in order)
 1. ✅ Next.js project setup → live on Vercel
-2. Homepage + projects page (static, Tailwind UI) ← CURRENT
-3. MDX blog with dynamic routes
-4. Music — SoundCloud embed, custom player as stretch goal
+2. ✅ Homepage + moodboard/category pages (static, Tailwind UI)
+3. ✅ MDX blog with dynamic routes
+4. Music — SoundCloud embed, custom player as stretch goal ← CURRENT
 5. Backend — contact form (Resend), GitHub API, optional Upstash counter
 6. Polish — Framer Motion, custom domain, SEO basics
 
